@@ -4,6 +4,7 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
+const principal = 200000
 
 
 
@@ -16,8 +17,14 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 Create another variable called `periods` and give it the value of years*12.
 */
 
-
-
+//  Step1: Mortgage Calc
+// need # of years converted to months
+// and monthly interest
+function mortgageCalculator(){
+    // numberofyears
+    const monthlyInterestRate = interestrate / 12;
+    const periods = years * 12
+}
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
