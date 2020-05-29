@@ -5,6 +5,8 @@
 */
 
 const principal = 200000
+const interestRate = 0.05
+const years = 30
 
 
 
@@ -20,11 +22,8 @@ Create another variable called `periods` and give it the value of years*12.
 //  Step1: Mortgage Calc
 // need # of years converted to months
 // and monthly interest
-function mortgageCalculator(){
-    // numberofyears
-    const monthlyInterestRate = interestrate / 12;
+    const monthlyInterestRate = interestRate / 12;
     const periods = years * 12
-}
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
@@ -35,7 +34,13 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
+// Mortgage Calculator Formula: M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
+
+const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+let monthlyRate = principal * numerator / denominator;
+console.log(monthlyRate);
 
 
 
@@ -45,9 +50,14 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageCalculator(name){
+    const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+let monthlyRate = principal * numerator / denominator;
+console.log(name + 'your monthly rate is $' + monthlyRate);
+}
 
-
-
+mortgageCalculator('Oscar');
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -55,6 +65,8 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
+
+
 
 
 
